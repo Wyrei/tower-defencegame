@@ -35,7 +35,6 @@ public class TowerShoot : MonoBehaviour
         }   
         foreach (Collider2D col in cols)
         {
-            Debug.Log(col.gameObject.name);
             if (col.gameObject.CompareTag("enemy"))
             {
                 if (firecountdown <= 0f)
@@ -52,6 +51,7 @@ public class TowerShoot : MonoBehaviour
             bulletshoot bullet = bulletgo.GetComponent<bulletshoot>();
             if (bullet != null)
             {
+            firecountdown = 1f;
                 bullet.seek(target);  
             }  
     }

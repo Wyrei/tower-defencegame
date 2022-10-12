@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class gamemanager : MonoBehaviour
 {
     public int gold;
-    public Text golddisplay;
+    public TextMeshProUGUI golddisplay;
 
     private Building buildingtoplace;
     public GameObject grid;
@@ -17,7 +18,7 @@ public class gamemanager : MonoBehaviour
 
     private void Update()
     {
-        //golddisplay.text = gold.ToString();
+        golddisplay.text = gold.ToString();
         if (Input.GetMouseButtonDown(0) && buildingtoplace != null)
         {
             tile  nearestTile = null;

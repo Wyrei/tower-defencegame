@@ -6,12 +6,8 @@ public class bulletshoot : MonoBehaviour
 {
     private Transform target;
     public float speed = 70f;
+    public int damage = 50;
     
-    void Target()
-    {
-        HitTarget();
-        Update();
-    }
     public void seek(Transform _target)
     {
         target = _target;
@@ -33,9 +29,21 @@ public class bulletshoot : MonoBehaviour
         }
         transform.Translate(dir.normalized * distancethisframe, Space.World);
     }
-    void HitTarget()
+    
+    public void HitTarget()
     {
+        gamemanager money = target.GetComponent<gamemanager>();
+        enemy daamage = target.GetComponent<enemy>();
+        daamage.health -= damage;
+        if (daamage.health >= 0)
+        {
+            Destroy(target.gameObject);
+        }
+        if (daamage.health >= 0)
+        {
+            //money.gold += 10;
+        }
         Destroy(gameObject);
-        Destroy(target.gameObject);
+        
     }
 }

@@ -6,4 +6,6 @@ public class Building : MonoBehaviour
 {
     public int cost = 25;
 
+    
+
 }
