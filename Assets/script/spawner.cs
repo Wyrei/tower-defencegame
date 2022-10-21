@@ -12,9 +12,7 @@ public class spawner : MonoBehaviour
     public int enemies;
     public bool enemieskunnenspawnen = true;
     public GameObject panel;
-    public GameObject enemy;
-    public Transform target;
-    public float range;
+   
 
     void Start()
     {
@@ -26,15 +24,7 @@ public class spawner : MonoBehaviour
     {
         timer -= Time.deltaTime;
         spawn();
-        Collider2D[] cols = Physics2D.OverlapCircleAll((Vector2)transform.position, range);
-        if (cols.Length > 0)
-        {
-            target = cols[0].gameObject.transform;
-        }
-        foreach (Collider2D col in cols)
-        {
-            
-        }
+      
     }
     void spawn()
     {
@@ -50,7 +40,6 @@ public class spawner : MonoBehaviour
                 if (enemies == 0)
                 {
                     enemieskunnenspawnen = false;
-                    enemy.SetActive(false);
                 }
             }
         }
@@ -59,9 +48,6 @@ public class spawner : MonoBehaviour
 
     }
 
-    void OnDrawGizmos()
-    {
-        Gizmos.DrawWireSphere(transform.position, range);
-    }
+   
 
 }
