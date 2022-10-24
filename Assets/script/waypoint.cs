@@ -8,7 +8,10 @@ public class waypoint : MonoBehaviour
     [SerializeField] Transform[] waypoints;
     [SerializeField] float maxspeed = 2f;
     int waypointindex = 0;
-   
+    private Transform lives;
+
+
+
     void Start()
     {
         transform.position = waypoints [waypointindex].transform.position;
@@ -17,21 +20,22 @@ public class waypoint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      
+        
         Move();
     }
-    private void Move()
+    public void Move()
     {
+       
         transform.position = Vector3.MoveTowards (transform.position,waypoints[waypointindex].transform.position,maxspeed * Time.deltaTime);
         
         if(transform.position == waypoints[waypointindex].transform.position)
         {
             waypointindex += 1;
         }
+        
         if (waypointindex == waypoints.Length)
         {
             Destroy(gameObject);
-            
         }
     }
 }

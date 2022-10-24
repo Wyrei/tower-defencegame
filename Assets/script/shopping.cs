@@ -5,8 +5,10 @@ using UnityEngine;
 public class shopping : MonoBehaviour
 {
     public GameObject panel;
+    public GameObject panel2;
     public bool shop = true;  
     public float timer;
+    
     
     void Start()
     {
@@ -22,7 +24,7 @@ public class shopping : MonoBehaviour
             if (Input.GetKey(KeyCode.B))
             {
                 panel.SetActive(true);
-               
+                panel2.SetActive(false);
                 
                 if(timer <= 0)
                 {
@@ -36,8 +38,8 @@ public class shopping : MonoBehaviour
             if (Input.GetKey(KeyCode.B))
             {
                 panel.SetActive(false);
-               
-               
+                panel2.SetActive(true);
+
                 if (timer <= 0)
                 {
                     shop = true;

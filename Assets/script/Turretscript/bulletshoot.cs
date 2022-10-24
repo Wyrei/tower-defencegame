@@ -6,7 +6,7 @@ public class bulletshoot : MonoBehaviour
 {
     private Transform target;
     public float speed = 70f;
-    public int damage = 50;
+    public int damage;
     
     public void seek(Transform _target)
     {
@@ -32,17 +32,26 @@ public class bulletshoot : MonoBehaviour
     
     public void HitTarget()
     {
-        gamemanager money = target.GetComponent<gamemanager>();
+
         enemy daamage = target.GetComponent<enemy>();
+        if (target.gameObject.CompareTag("enemyrood"))
+        {
+            damage += 20;
+        }
+        if (target.gameObject.CompareTag("enemyblauw"))
+        {
+            damage += 5;
+        }
+        if (target.gameObject.CompareTag("enemygroen"))
+        {
+            damage += 10;
+        }
         daamage.health -= damage;
-        if (daamage.health >= 0)
+        if (daamage.health <= 0)
         {
             Destroy(target.gameObject);
         }
-        if (daamage.health >= 0)
-        {
-            //money.gold += 10;
-        }
+        
         Destroy(gameObject);
         
     }

@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: -3220677608712549802}
   - component: {fileID: -5652982848085029290}
   m_Layer: 0
-  m_Name: enemy
-  m_TagString: enemygroen
+  m_Name: enemy 2
+  m_TagString: enemyblauw
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -161,4 +161,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04fb04eae1499d74fa6c7496d0e0fa89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
+  health: 20

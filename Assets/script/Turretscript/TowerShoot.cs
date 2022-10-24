@@ -35,7 +35,23 @@ public class TowerShoot : MonoBehaviour
         }   
         foreach (Collider2D col in cols)
         {
-            if (col.gameObject.CompareTag("enemy"))
+            if (col.gameObject.CompareTag("enemyrood"))
+            {
+                if (firecountdown <= 0f)
+                {
+                    shoot();
+                    firecountdown = 1f / fireRate;
+                }
+            }
+            if (col.gameObject.CompareTag("enemyblauw"))
+            {
+                if (firecountdown <= 0f)
+                {
+                    shoot();
+                    firecountdown = 1f / fireRate;
+                }
+            }
+            if (col.gameObject.CompareTag("enemygroen"))
             {
                 if (firecountdown <= 0f)
                 {
@@ -51,7 +67,7 @@ public class TowerShoot : MonoBehaviour
             bulletshoot bullet = bulletgo.GetComponent<bulletshoot>();
             if (bullet != null)
             {
-            firecountdown = 1f;
+                firecountdown = 1f;
                 bullet.seek(target);  
             }  
     }

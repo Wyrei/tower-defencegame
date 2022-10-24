@@ -5,9 +5,14 @@ using UnityEngine;
 public class enemy : MonoBehaviour
 {
     public int health;
-  
-    public void Start()
+    private Transform Money;
+
+    void Update()
     {
-        
+        if(health <= 0)
+        {
+            gamemanager money = Money.GetComponent<gamemanager>();
+            money.gold += 5;
+        }   
     }
 }
