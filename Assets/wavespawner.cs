@@ -10,7 +10,7 @@ public class wavespawner : MonoBehaviour
     public float timebetweenwaves = 5f;
     public float countdown = 1f;
 
-    private int wavenumber = 2;
+    public int wavenumber = 2;
 
     void Update()
     {

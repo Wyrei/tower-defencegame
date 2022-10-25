@@ -49,6 +49,7 @@ public class bulletshoot : MonoBehaviour
         daamage.health -= damage;
         if (daamage.health <= 0)
         {
+            FindObjectOfType<gamemanager>().gold += 5;
             Destroy(target.gameObject);
         }
         

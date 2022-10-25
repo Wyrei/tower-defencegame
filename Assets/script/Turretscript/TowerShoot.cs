@@ -41,6 +41,7 @@ public class TowerShoot : MonoBehaviour
                 {
                     shoot();
                     firecountdown = 1f / fireRate;
+                    
                 }
             }
             if (col.gameObject.CompareTag("enemyblauw"))
@@ -57,6 +58,7 @@ public class TowerShoot : MonoBehaviour
                 {
                     shoot();
                     firecountdown = 1f / fireRate;
+                    
                 }
             }
         }

@@ -35,7 +35,9 @@ public class waypoint : MonoBehaviour
         
         if (waypointindex == waypoints.Length)
         {
+            FindObjectOfType<health>().Health -= 1;
             Destroy(gameObject);
+            
         }
     }
 }
